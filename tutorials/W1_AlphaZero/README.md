@@ -1,4 +1,4 @@
-# Week - Introduction and AlphaZero
+# Week 1 - Introduction and AlphaZero
 
 ## Instructor notebooks
 

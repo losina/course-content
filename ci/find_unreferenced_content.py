@@ -3,7 +3,7 @@ from glob import glob
 
 if __name__ == "__main__":
 
-    day_paths = glob("tutorials/W?D?_*")
+    day_paths = glob("tutorials/W?_*")
     for day_path in sorted(day_paths):
 
         # Read all of the text for this day's student notebooks into one string
@@ -14,7 +14,7 @@ if __name__ == "__main__":
                 notebook_text += f.read()
 
         # Find solution images and scripts
-        solution_pattern = "W?D?_*_Solution*"
+        solution_pattern = "W?_*_Solution*"
         static_paths = glob(f"{day_path}/static/{solution_pattern}")
         script_paths = glob(f"{day_path}/solutions/{solution_pattern}")
 

@@ -1,4 +1,4 @@
-"""Process tutorials for Neuromatch Academy
+"""Process tutorials for CIS-522
 
 - Filter input file list for .ipynb files
 - Check that the cells have been executed sequentially on a fresh kernel
@@ -30,10 +30,10 @@ from nbconvert.preprocessors import ExecutePreprocessor
 
 
 GITHUB_RAW_URL = (
-    "https://raw.githubusercontent.com/NeuromatchAcademy/course-content/master"
+    "https://raw.githubusercontent.com/CIS-522/course-content/main"
 )
 GITHUB_TREE_URL = (
-    "https://github.com/NeuromatchAcademy/course-content/tree/master/"
+    "https://github.com/CIS-522/course-content/tree/main/"
 )
 
 
@@ -85,16 +85,21 @@ def main(arglist):
         # Clean whitespace from all code cells
         clean_whitespace(nb)
 
-        # Run the notebook from top to bottom, catching errors
-        print(f"Executing {nb_path}")
-        executor = ExecutePreprocessor(**exec_kws)
-        try:
-            executor.preprocess(nb)
-        except Exception as err:
-            # Log the error, but then continue
-            errors[nb_path] = err
+        # Skip execution step if CUDA use is detected
+        if has_cuda(nb):
+            print(f"CUDA detected in {nb_path}, skipping execution check!")
         else:
-            notebooks[nb_path] = nb
+            # Run the notebook from top to bottom, catching errors
+            print(f"Executing {nb_path}")
+            executor = ExecutePreprocessor(**exec_kws)
+            try:
+                print(f"Skipping execution pass for {nb_path}")
+                #executor.preprocess(nb)
+            except Exception as err:
+                # Log the error, but then continue
+                errors[nb_path] = err
+            else:
+                notebooks[nb_path] = nb
 
     if errors or args.check_only:
         exit(errors)
@@ -313,6 +318,15 @@ def clean_whitespace(nb):
             cell["source"] = "\n".join(clean_lines)
 
 
+def has_cuda(nb):
+    """Return True if the notebook references CUDA in code anywhere."""
+    for cell in nb.get("cells", []):
+        if cell.get("cell_type", "") == "code" and \
+           "cuda" in cell["source"].lower():
+           return True
+    return False
+
+
 def has_solution(cell):
     """Return True if cell is marked as containing an exercise solution."""
     cell_text = cell["source"].replace(" ", "").lower()
@@ -331,14 +345,14 @@ def has_colab_badge(cell):
 def redirect_colab_badge_to_master_branch(cell):
     """Modify the Colab badge to point at the master branch on Github."""
     cell_text = cell["source"]
-    p = re.compile(r"^(.+/NeuromatchAcademy/course-content/blob/)\w+(/.+$)")
+    p = re.compile(r"^(.+/CIS-522/course-content/blob/)\w+(/.+$)")
     cell["source"] = p.sub(r"\1master\2", cell_text)
 
 
 def redirect_colab_badge_to_student_version(cell):
     """Modify the Colab badge to point at student version of the notebook."""
     cell_text = cell["source"]
-    p = re.compile(r"(^.+/tutorials/W\dD\d\w+)/(\w+\.ipynb.+)")
+    p = re.compile(r"(^.+/tutorials/W\d\w+)/(\w+\.ipynb.+)")
     cell["source"] = p.sub(r"\1/student/\2", cell_text)
 
 

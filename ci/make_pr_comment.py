@@ -79,7 +79,7 @@ def make_colab_badge(branch, nb_dir, nb_fname, student=False):
         nb_dir = os.path.join(nb_dir, "student")
     url = (
         "https://colab.research.google.com/"
-        "github/NeuromatchAcademy/course-content/blob/"
+        "github/CIS-522/course-content/blob/"
         f"{branch}/{nb_dir}/{nb_fname}"
     )
     return f"[![{alt_text}]({badge_svg})]({url})"
@@ -88,7 +88,7 @@ def make_colab_badge(branch, nb_dir, nb_fname, student=False):
 def parse_args(arglist):
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--branch", default="master")
+    parser.add_argument("--branch", default="main")
     parser.add_argument("--output")
     parser.add_argument("notebooks", nargs="*")
     return parser.parse_args(arglist)

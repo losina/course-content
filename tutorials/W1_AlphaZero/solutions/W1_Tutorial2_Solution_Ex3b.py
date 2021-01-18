@@ -1,4 +1,3 @@
-# to_remove solution
 class MCTSAgent(PolicyAgentBase):
     def __init__(self, tree:MCTSTree, temperature=1.0):
         super(MCTSAgent, self).__init__(temperature=temperature)

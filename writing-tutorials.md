@@ -69,6 +69,6 @@ When each tutorial is complete, it should:
 6. Tutorial notebooks should be able to execute from top-to-bottom without error, including after the solution cells are removed. This allows us to automatically enforce a minimum standard of correctness.
 7. Each tutorial stands on its own. Like a memorable story, set the context in the introduction, take the student forward through the exercises, and anchor learned points in the conclusion section.
 
-Have a look at a reference NMA tutorial to see what a tutorial looks like in the end: [Bayes Day tutorial 1](https://colab.research.google.com/github/NeuromatchAcademy/course-content/blob/master/tutorials/Bayes/TA_solutions/BayesDay_Tutorial_1_solutions.ipynb)
+Have a look at a reference NMA tutorial to see what a tutorial looks like in the end: [Bayes Day tutorial 1](https://colab.research.google.com/github/NeuromatchAcademy/course-content/blob/master/tutorials/W2D1_BayesianStatistics/W2D1_Tutorial1.ipynb)
 
-NMA materials also offer a collection of self-contained [Tutorial demos](./demos) illustrating invidual components.
+NMA materials also offer a collection of self-contained [Tutorial demos](https://github.com/NeuromatchAcademy/course-content/tree/master/tutorials/demo) illustrating invidual components.

@@ -1,4 +1,4 @@
-# Week 1 - Introduction and AlphaZero
+# Week 2 - PyTorch and Deep Linear Networks
 
 ## Student notebooks
 

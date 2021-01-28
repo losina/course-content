@@ -1,6 +1,6 @@
-a1 = torch.tensor([[1, 2, 4], [5, 5, 7], [10, 15, 1]])
-a2 = torch.tensor([[1, 1, 1], [2, 2, 3], [2, 3, 4]])
-a3 = torch.tensor([[10, 10, 10], [20, 12, 1], [12, 32, 4]])
+a1 = torch.tensor([[2, 4], [5, 7]])
+a2 = torch.tensor([[1, 1], [2, 3]])
+a3 = torch.tensor([[10, 10], [12, 1]])
 A = torch.add(a1 @ a2, a3)
 print("A =", A)
 

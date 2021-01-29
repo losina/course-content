@@ -1,4 +1,4 @@
-***DISCLAIMER***: This text is largely copied from NMA's [The zen of reviewing tutorials for Neuromatch Academy (NMA)](https://github.com/NeuromatchAcademy/course-content/blob/main/tutorials/reviewing-tutorials.md) written by NMA waxing team (esp. Patrick Mineault, Michael Waskom, Marco Brigham, and Madineh Sarvestani).
+***DISCLAIMER***: This text is largely copied from NMA's [The zen of reviewing tutorials for Neuromatch Academy (NMA)](https://github.com/NeuromatchAcademy/course-content/blob/master/tutorials/reviewing-tutorials.md) written by NMA waxing team (esp. Patrick Mineault, Michael Waskom, Marco Brigham, and Madineh Sarvestani).
 
 ## Workflow for incorporation into the Github repostory
 

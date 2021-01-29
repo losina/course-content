@@ -20,6 +20,7 @@ While it's helpful to have multiple people handle the work of merging the tutori
     2. (only necessary for instructor version)`Runtime` -> `Run all` and make sure the notebook runs fully without any error
     3. `Runtime` -> `Factory reset runtime`
     4. `Edit` -> `Clear all outputs`
+    5. make sure all the cells which are supposed to be hidden (#@title and #@markdown cells) are hidden.
   - `File -> Save a copy in Github` in the Colab menu
   - Select the course repository: (`NeuromatchAcademy/course-content`)
   - Select your feature branch: (e.g. `WxDy`)

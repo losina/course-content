@@ -27,7 +27,7 @@ def training_modes(inputs, targets):
     time.sleep(0.01)
 
     preds = model(inputs)
-    
+
     loss = criterion(preds, targets)
     loss.backward()
 
@@ -39,8 +39,8 @@ def training_modes(inputs, targets):
     # Grdient descent
     optimizer.step()
     optimizer.zero_grad()
-        
-    losses.append(loss)
+
+    losses.append(loss.item())
 
   return (losses, modes, num_epochs)
 

@@ -21,6 +21,9 @@ def training_modes(inputs, targets):
   lr  = 2e-3  # learning rate
   num_epochs = 3000
 
+  # Loss function
+  criterion = nn.MSELoss()
+
   # Train for num_epochs
   losses = []
   rank = 5
@@ -36,7 +39,7 @@ def training_modes(inputs, targets):
 
     preds = modelSVD(inputs, params)
     
-    loss = mse(preds, targets)
+    loss = criterion(preds, targets)
     loss.backward()
 
     # SVD applied on the matrix product

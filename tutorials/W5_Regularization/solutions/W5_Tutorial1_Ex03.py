@@ -1,10 +1,9 @@
-def early_stopping_main(model,train_loader,val_loader,test_data):
+def early_stopping_main(args,model,train_loader,val_loader,test_data):
 
     """
         Inputs: 
             Model: Pytorch model
             Loaders: Pytorch Train and Validation loaders
-
         The function trains the model and terminates the training based on the early stopping criterion.
     """
 

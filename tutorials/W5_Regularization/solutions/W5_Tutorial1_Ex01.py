@@ -1,12 +1,19 @@
 def calculate_frobenius_norm(model):
-    """
-        Input: Pytorch newtork
-        Output: Frobenious Norm of all the tensors of the model
-    """
+
+    ####################################################################
+    # Fill in all missing code below (...),
+    # then remove or comment the line below to test your function
+    # raise NotImplementedError("Define the grad visualization function")
+    ####################################################################
+
     norm = 0.0
 
-    for name,param in model.named_parameters():
-        norm += torch.norm(param)         
+    # Sum all the parameters
+    for param in model.parameters():
+        norm += torch.sum(param**2)
+
+    # Take a square root of the sum of squares of all the parameters
+    norm = norm**0.5
     return norm
 
 net = nn.Linear(10,1)

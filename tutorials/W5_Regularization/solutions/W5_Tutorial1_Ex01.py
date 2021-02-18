@@ -6,7 +6,7 @@ def calculate_frobenius_norm(model):
     norm = 0.0
 
     for name,param in model.named_parameters():
-        norm += torch.norm(param).data         
+        norm += torch.norm(param)         
     return norm
 
 net = nn.Linear(10,1)

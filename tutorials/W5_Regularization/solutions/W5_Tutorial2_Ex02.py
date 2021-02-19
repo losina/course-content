@@ -3,7 +3,7 @@ def prune_l1_unstructured(model,prune_percent_weight,prune_percent_bias = 0):
     for name, module in model.named_modules():
         if isinstance(module, torch.nn.Conv2d) or isinstance(module, torch.nn.Linear):
             prune.l1_unstructured(module, name='weight', amount=prune_percent_weight)
-            prune.l1_unstructured(module, name='weight', amount=prune_percent_bias)
+            prune.l1_unstructured(module, name='bias', amount=prune_percent_bias)
 
             print(
                 "Sparsity in {}: {:.2f}%".format(name,

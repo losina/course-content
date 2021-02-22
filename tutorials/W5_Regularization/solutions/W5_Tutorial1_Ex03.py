@@ -28,7 +28,7 @@ def early_stopping_main(args,model,train_loader,val_loader,test_data):
         if (val_acc > best_acc):
           best_acc = val_acc
           best_epoch = epoch
-          best_model = model
+          best_model = copy.deepcopy(model)
           wait = 0
         else:
           wait += 1

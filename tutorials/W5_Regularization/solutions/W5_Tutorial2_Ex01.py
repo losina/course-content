@@ -1,7 +1,7 @@
 def calculate_inference(N):
 
     total_time = 0.0
-    model = Dropout_Animal_Net()
+    model = Big_Animal_Net()
     model.eval()
     
     for i in range(N):

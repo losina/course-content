@@ -1,7 +1,7 @@
-# Exercise 6
+### Exercise 6
 Why might pretrained models outperform models trained from scratch? In what cases would you expect them to be worse?
 
-# Answer
+### Answer
 1. The closer your pretraining and target data domains are, the better pretraining will work
 2. The more pretraining data you have, the better pretraining will work
 3. The better your model is able to take advantage of your pretraining data (that is to say the larger your model is assuming you have enough data), the better pretraing will work
